@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+import Timeout from './components/Timeout';
 
-function App() {
+
+export default function App() {
+  const [timeoutList, setTimeoutList] = useState([0]);
+
+  function addTimeout() {
+    setTimeoutList([...timeoutList, timeoutList.length + 1]);
+  }
+
+  function onRemove(index) {
+    console.log(`deteleSomething ${index}!`);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div>
+        <ul id="timeoutsList">
+          {timeoutList.map((c, index) => <Timeout key={c} onRemove={() => onRemove(index)}  />)}
+        </ul>
+      </div>
+      <button onClick={addTimeout}>New Timeout</button>
     </div>
   );
 }
-
-export default App;
