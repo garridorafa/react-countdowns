@@ -12,6 +12,10 @@ export default function App() {
 
   function onRemove(index) {
     console.log(`deteleSomething ${index}!`);
+    setTimeoutList([
+      ...timeoutList.slice(0, index),
+      ...timeoutList.slice(index + 1, timeoutList.length)
+    ]);
   }
 
   return (

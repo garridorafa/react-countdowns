@@ -17,7 +17,7 @@ export default function Timeout({ onRemove }) {
 
   return (
     <li id='timeout{prop.id}'>
-      <span className="name">Timeout 1</span>
+      <span className="name">`Timeout </span>
       <span className="count">{count}</span>
       <button className="btn" onClick={onRemove}>Delete</button>
     </li>
