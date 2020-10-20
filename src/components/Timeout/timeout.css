@@ -1,0 +1,43 @@
+.timeout {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.timeout .timeout-wrapper {
+  flex: 1;
+}
+
+.timeout .btn-remove {
+  background: none;
+  border: 0;
+  color: #000;
+  opacity: 0.6;
+  transition: all 100ms linear;
+  cursor: pointer;
+  outline: none;
+}
+
+.timeout .btn-remove:hover {
+  opacity: 1;
+  color: red;
+}
+
+.timeout .name {
+  padding-right: 20px;
+}
+
+.timeout .count {
+  padding-right: 40px;
+  font-weight: 700;
+  color: #000;
+}
+
+.timeout .count.warning {
+  color: darkorange;
+}
+
+.timeout .count.danger {
+  color: darkred;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Timeout from './components/Timeout/Timeout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
-import Timeout from './components/Timeout';
-
 
 export default function App() {
   const [timeoutList, setTimeoutList] = useState([0]);
@@ -11,7 +12,6 @@ export default function App() {
   }
 
   function onRemove(index) {
-    console.log(`deteleSomething ${index}!`);
     setTimeoutList([
       ...timeoutList.slice(0, index),
       ...timeoutList.slice(index + 1, timeoutList.length)
@@ -25,7 +25,10 @@ export default function App() {
           {timeoutList.map((c, index) => <Timeout index={index} key={c} onRemove={() => onRemove(index)}  />)}
         </ul>
       </div>
-      <button onClick={addTimeout}>New Timeout</button>
+      <button className="button" onClick={addTimeout}>
+        <FontAwesomeIcon icon={faPlusSquare} />
+        New Timeout
+      </button>
     </div>
   );
 }
