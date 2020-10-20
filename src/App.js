@@ -21,8 +21,8 @@ export default function App() {
   return (
     <div className="app">
       <div>
-        <ul id="timeoutsList">
-          {timeoutList.map((c, index) => <Timeout key={c} onRemove={() => onRemove(index)}  />)}
+        <ul class="timeouts-list">
+          {timeoutList.map((c, index) => <Timeout index={index} key={c} onRemove={() => onRemove(index)}  />)}
         </ul>
       </div>
       <button onClick={addTimeout}>New Timeout</button>
